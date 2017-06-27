@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-content">
+    <div class="card-title">Financial Report</div>
+    <div class="card-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Units Sold (millions)</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let record of records; even as stripe"
+                [class.stripe]="stripe"
+                >
+                <td>{{record.empName}}</td>
+                <td>
+                  <div [ngClass]="status(record)" [style.width.px]="30 + (record.units / 10480) * 170" class="bar"></div>
+                </td>
+                <td>
+                  <div [ngClass]="status(record)" [style.width.px]="30 + (record.totalRevenue / 90855398) * 170" class="bar"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
